@@ -13,6 +13,7 @@
 		BEB4EB7527B9FCE800B98792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEB4EB7427B9FCE800B98792 /* Preview Assets.xcassets */; };
 		BEB4EB7F27B9FD2200B98792 /* LoadinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4EB7E27B9FD2200B98792 /* LoadinView.swift */; };
 		BEB4EB8127B9FD6500B98792 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4EB8027B9FD6500B98792 /* User.swift */; };
+		BEB4EB8327BA004900B98792 /* LoadingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB4EB8227BA004900B98792 /* LoadingViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		BEB4EB7427B9FCE800B98792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		BEB4EB7E27B9FD2200B98792 /* LoadinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadinView.swift; sourceTree = "<group>"; };
 		BEB4EB8027B9FD6500B98792 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BEB4EB8227BA004900B98792 /* LoadingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		BEB4EB7D27B9FD0500B98792 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				BEB4EB8227BA004900B98792 /* LoadingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				BEB4EB8127B9FD6500B98792 /* User.swift in Sources */,
 				BEB4EB7027B9FCE600B98792 /* ContentView.swift in Sources */,
+				BEB4EB8327BA004900B98792 /* LoadingViewModel.swift in Sources */,
 				BEB4EB6E27B9FCE600B98792 /* SwiftNewFeaturesApp.swift in Sources */,
 				BEB4EB7F27B9FD2200B98792 /* LoadinView.swift in Sources */,
 			);

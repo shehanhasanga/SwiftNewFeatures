@@ -11,7 +11,8 @@ import SwiftUI
 struct SwiftNewFeaturesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoadinView()
         }
+        
     }
 }

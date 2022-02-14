@@ -8,20 +8,29 @@
 import SwiftUI
 
 struct LoadinView: View {
-    let url = "https://jsonplaceholder.typicode.com/users"
+    @StateObject var viewModel  = LoadingViewModel()
     @State var users :[User] = []
     var body: some View {
         NavigationView{
-            List(users){
-                user in
-                VStack(alignment:.leading, spacing: 10){
-                    Text(user.name)
-                        .font(.headline)
-                    Text(user.email)
-                        .font(.caption)
+            VStack{
+                List(viewModel.users){
+                    user in
+                    VStack(spacing: 10){
+                        Text(user.name)
+                            .font(.headline)
+                        Text(user.email)
+                            .font(.caption)
+                    }
                 }
+    //            .frame(maxWidth:.infinity)
+                // adding refresh control
+                .refreshable (action: {
+                    await viewModel.fetchUsers()
+                })
             }
+           
             .navigationTitle("Pull to refresh")
+           
         }
     }
 }
