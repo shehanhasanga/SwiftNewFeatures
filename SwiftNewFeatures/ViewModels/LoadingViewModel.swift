@@ -11,7 +11,9 @@ class LoadingViewModel : ObservableObject{
     let urlString:String = "https://jsonplaceholder.typicode.com/users"
     
     init() {
-
+        Task.init {
+                    await fetchUsers()
+                }
 //        await fetchUsers(urlString: urlString)
     }
     func fetchUsers() async{
