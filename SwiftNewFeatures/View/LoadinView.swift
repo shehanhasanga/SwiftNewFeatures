@@ -11,16 +11,37 @@ struct LoadinView: View {
     @StateObject var viewModel  = LoadingViewModel()
     @State var users :[User] = []
     @State var searchTxt = ""
+
+
     var body: some View {
         NavigationView{
             VStack{
                 List(viewModel.users){
                     user in
                     VStack(spacing: 10){
-                        Text(user.name)
-                            .font(.headline)
-                        Text(user.email)
-                            .font(.caption)
+                        HStack{
+                            AsyncImage(url: URL(string: "https://picsum.photos/200/300"), scale: 1.0){
+                                phase in
+                                if let image = phase.image{
+                                    image.resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: 100, height: 100)
+                                        .cornerRadius(10)
+                                } else{
+                                    Image(systemName: "house.fill")
+                                        .font(.largeTitle)
+                                        .foregroundColor(Color.gray)
+                                }
+                            }
+                            VStack{
+                                Text(user.name)
+                                    .font(.headline)
+                                Text(user.email)
+                                    .font(.caption)
+                            }
+                        }
+                       
+                      
                     }
                 }
     //            .frame(maxWidth:.infinity)
