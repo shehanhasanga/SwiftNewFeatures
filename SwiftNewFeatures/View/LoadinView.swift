@@ -10,6 +10,7 @@ import SwiftUI
 struct LoadinView: View {
     @StateObject var viewModel  = LoadingViewModel()
     @State var users :[User] = []
+    @State var searchTxt = ""
     var body: some View {
         NavigationView{
             VStack{
@@ -27,6 +28,15 @@ struct LoadinView: View {
                 .refreshable (action: {
                     await viewModel.fetchUsers()
                 })
+                .searchable(text: $searchTxt) {
+                    ForEach(viewModel.users.filter({ user in
+                        searchTxt == "" ? true : user.email.lowercased().contains(searchTxt.lowercased())
+                    })){user in
+                        Text(user.name)
+
+                    }
+                       
+                }
             }
            
             .navigationTitle("Pull to refresh")

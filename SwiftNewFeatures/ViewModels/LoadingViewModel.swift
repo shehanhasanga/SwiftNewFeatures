@@ -27,7 +27,10 @@ class LoadingViewModel : ObservableObject{
             guard (response as? HTTPURLResponse)?.statusCode == 200 else { fatalError("Error while fetching data") }
 
             let users = try JSONDecoder().decode([User].self, from:data)
-            self.users = users
+            DispatchQueue.main.async {
+                self.users = users
+            }
+          
         }catch let error{
             print(error)
         }
